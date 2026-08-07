@@ -1,9 +1,11 @@
 node_modules
 .next
+.agents
 out
 dist
 .env
 .env*.local
+skills-lock.json
 tsconfig.tsbuildinfo
 prisma/dev.db
 prisma/dev.db-journal
