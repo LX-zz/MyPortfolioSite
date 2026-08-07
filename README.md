@@ -7,7 +7,7 @@
 - Главная страница с фиксированным меню, мобильной навигацией, первым экраном, услугами, портфолио, этапами, тарифами, блоком об исполнителе, FAQ, контактами и формой заявки.
 - Демонстрационные страницы портфолио.
 - Серверная обработка формы с Zod-валидацией, honeypot-полем и ограничением длины полей.
-- Сохранение заявок в SQLite через Prisma.
+- Сохранение заявок в PostgreSQL через Prisma.
 - Админ-страница `/admin/leads` с серверной проверкой пароля через `ADMIN_PASSWORD`.
 - Смена статусов заявок: `Новая`, `В работе`, `Завершена`, `Отказ`.
 - Metadata, Open Graph, favicon-заглушка, `robots.txt`, `sitemap.xml`, 404, loading и error states.
@@ -20,7 +20,7 @@
 - React
 - Tailwind CSS
 - Prisma 7
-- SQLite
+- PostgreSQL
 - Zod
 - Lucide Icons
 - ESLint
@@ -36,11 +36,13 @@ npm install
 Создайте `.env` на основе `.env.example` и задайте значения:
 
 ```env
-DATABASE_URL="file:./prisma/dev.db"
+DATABASE_URL="postgresql://USER:PASSWORD@HOST:5432/DATABASE?sslmode=require"
+DIRECT_URL=""
 ADMIN_PASSWORD="replace-with-a-strong-password"
 NEXT_PUBLIC_SITE_URL="http://localhost:3000"
 ```
-нужен только на сервере и не отправляется в браузер. Для локальной проверки в текущем проекте уже задан тестовый пароль `admin123`; перед реальным использованием замените его.
+`ADMIN_PASSWORD` нужен только на сервере и не отправляется в браузер. Для локальной проверки в текущем проекте уже задан тестовый пароль `admin123`; перед реальным использованием замените его.
+`DIRECT_URL` можно оставить пустым. Его задают, когда провайдер базы дает отдельную прямую строку подключения для миграций.
 
 ## Prisma и база данных
 
@@ -50,7 +52,7 @@ NEXT_PUBLIC_SITE_URL="http://localhost:3000"
 npm run prisma:generate
 ```
 
-Создать или обновить SQLite-базу по миграциям:
+Создать или обновить таблицы в PostgreSQL по миграциям:
 
 ```bash
 npm run prisma:deploy
@@ -62,7 +64,16 @@ npm run prisma:deploy
 npm run prisma:studio
 ```
 
-SQLite-файл локальной разработки находится в `prisma/dev.db`.
+`DATABASE_URL` должен указывать на PostgreSQL-базу: Neon, Supabase, Prisma Postgres, Railway, Render или свой VPS с Postgres.
+
+Для обучения полезно запомнить:
+
+- `prisma/schema.prisma` описывает модели данных;
+- `prisma/migrations/**/migration.sql` хранит SQL-историю изменений базы;
+- `DATABASE_URL` хранится только в `.env` или переменных окружения хостинга;
+- `DIRECT_URL` используют для миграций, если у провайдера есть отдельный direct connection;
+- `npm run prisma:deploy` применяет готовые миграции на сервере;
+- `npm run prisma:migrate` используют для разработки новой миграции локально.
 
 ## Запуск
 
@@ -143,13 +154,25 @@ config/site.ts
 ## Подготовка к размещению на сервере
 
 1. Замените контакты, Telegram, почту и цены в `config/site.ts`.
-2. Задайте сильный `ADMIN_PASSWORD` в переменных окружения сервера.
-3. Укажите публичный адрес сайта в `NEXT_PUBLIC_SITE_URL`.
-4. Выполните `npm install`.
-5. Выполните `npm run prisma:generate`.
-6. Выполните `npm run prisma:deploy`.
-7. Выполните `npm run build`.
-8. Запустите приложение через `npm run start` или процесс-менеджер на сервере.
+2. Создайте PostgreSQL-базу у провайдера.
+3. Скопируйте строку подключения в `DATABASE_URL`.
+4. Задайте сильный `ADMIN_PASSWORD` в переменных окружения сервера.
+5. Укажите публичный адрес сайта в `NEXT_PUBLIC_SITE_URL`.
+6. Выполните `npm install`.
+7. Выполните `npm run prisma:generate`.
+8. Выполните `npm run prisma:deploy`.
+9. Выполните `npm run build`.
+10. Запустите приложение через `npm run start` или процесс-менеджер на сервере.
+
+На Vercel обычно делают так:
+
+1. Подключают GitHub-репозиторий.
+2. Создают PostgreSQL-базу через Vercel Marketplace или отдельно у Neon/Supabase.
+3. Добавляют переменные окружения `DATABASE_URL`, `ADMIN_PASSWORD`, `NEXT_PUBLIC_SITE_URL` и при необходимости `DIRECT_URL`.
+4. В build command оставляют `npm run build`.
+5. После первого деплоя запускают миграции командой `npm run prisma:deploy` в окружении с production `DATABASE_URL`.
+
+Подробная памятка по процессу: `docs/postgres-deployment.md`.
 
 ## Документы
 

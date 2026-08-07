@@ -5,9 +5,9 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   reactStrictMode: true,
   serverExternalPackages: [
-    "@prisma/adapter-better-sqlite3",
+    "@prisma/adapter-pg",
     "@prisma/client",
-    "better-sqlite3",
+    "pg",
     "prisma",
   ],
 };
