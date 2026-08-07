@@ -1,0 +1,20 @@
+export const serviceOptions = [
+  "Лендинг",
+  "Корпоративный сайт",
+  "Интернет-магазин",
+  "Редизайн",
+  "SEO-оптимизация",
+  "Другое",
+] as const;
+
+export const budgetOptions = [
+  "До 20 000 ₽",
+  "20 000–40 000 ₽",
+  "40 000–70 000 ₽",
+  "Более 70 000 ₽",
+  "Пока не определился",
+] as const;
+
+export const leadStatusOptions = ["Новая", "В работе", "Завершена", "Отказ"] as const;
+
+export type LeadStatus = (typeof leadStatusOptions)[number];
