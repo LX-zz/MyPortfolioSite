@@ -10,10 +10,10 @@ export function LeadFormSection() {
           <SectionHeading
             eyebrow="Заявка"
             title="Расскажите о вашем проекте"
-            description="Заполните форму, и я свяжусь с вами в ближайшее время. Достаточно указать имя и один удобный способ связи."
+            description="Достаточно имени и одного удобного способа связи."
           />
           <div className="mt-8 grid gap-4">
-            {["Быстро уточню задачу", "Подскажу подходящий формат сайта", "Оценю сроки и стартовую стоимость"].map(
+            {["Уточню задачу", "Оценю сроки и стартовую стоимость"].map(
               (item) => (
                 <div key={item} className="rounded-lg border border-cyan-100/10 bg-white/[0.025] p-4 text-sm text-neutral-300">
                   {item}

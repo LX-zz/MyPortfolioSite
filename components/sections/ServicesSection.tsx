@@ -11,13 +11,13 @@ export function ServicesSection() {
       <Reveal>
         <SectionHeading
           eyebrow="Услуги"
-          title="Сайт под задачу, а не просто красивый экран"
-          description="Можно начать с лендинга, обновить текущий сайт или собрать полноценную структуру для компании, каталога и заявок."
+          title="Основное, с чего можно начать"
+          description="Выбираем формат под задачу: быстрый лендинг, сайт компании или обновление текущего проекта."
         />
       </Reveal>
 
       <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {services.map((service, index) => {
+        {services.slice(0, 3).map((service, index) => {
           const Icon = service.icon;
 
           return (
@@ -35,11 +35,8 @@ export function ServicesSection() {
                 </div>
                 <h3 className="mt-6 text-xl font-semibold text-white">{service.title}</h3>
                 <p className="mt-3 min-h-16 text-sm leading-6 text-neutral-400">{service.description}</p>
-                <a
-                  href="#lead-form"
-                  className="focus-ring mt-6 inline-flex items-center gap-2 rounded-md text-sm font-semibold text-cyan-100 transition hover:text-white"
-                >
-                  Подробнее
+                <a href="#lead-form" className="focus-ring mt-6 inline-flex items-center gap-2 rounded-md text-sm font-semibold text-cyan-100 transition hover:text-white">
+                  Обсудить
                   <ArrowRight className="size-4 transition group-hover:translate-x-1" />
                 </a>
               </article>

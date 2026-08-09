@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 function BrowserPreview() {
   return (
-    <div className="animate-float-panel relative mx-auto w-full max-w-[530px] opacity-90" aria-label="Пример бизнес-сайта">
+    <div className="animate-float-panel relative mx-auto w-full max-w-[530px] opacity-90">
       <div className="rounded-lg border border-cyan-100/10 bg-[#071013]/75 shadow-[0_30px_90px_rgba(0,0,0,0.55),0_0_80px_rgba(103,232,249,0.08)] backdrop-blur">
         <div className="flex h-12 items-center gap-2 border-b border-cyan-100/10 px-4">
           <span className="size-3 rounded-full bg-white/[0.18]" />
@@ -75,20 +75,26 @@ function BrowserPreview() {
 
 export function HeroSection() {
   return (
-    <section className="container-page relative grid gap-12 pb-20 pt-32 lg:grid-cols-[1fr_0.92fr] lg:items-center lg:pt-36">
+    <section className="container-page relative overflow-hidden pb-20 pt-32 lg:min-h-[720px] lg:pt-36">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-4 top-24 hidden text-[13rem] font-black leading-none text-white/[0.025] blur-[0.2px] lg:block"
+        className="pointer-events-none absolute -left-4 top-24 z-0 hidden text-[13rem] font-black leading-none text-white/[0.025] blur-[0.2px] lg:block"
       >
         2К
       </div>
-      <Reveal>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-[22%] top-28 z-0 hidden w-[min(72vw,780px)] rotate-[-5deg] opacity-[0.18] blur-[0.3px] saturate-75 [mask-image:linear-gradient(90deg,transparent,black_28%,black_82%,transparent)] lg:block xl:-right-[10%]"
+      >
+        <BrowserPreview />
+      </div>
+      <Reveal className="relative z-10 max-w-3xl">
         <p className="relative inline-flex items-center gap-2 rounded-md border border-cyan-200/20 bg-white/[0.035] px-3 py-2 text-sm font-medium text-cyan-50 backdrop-blur">
           <span className="size-2 rounded-full bg-cyan-200 shadow-[0_0_18px_rgba(103,232,249,0.65)]" />
           {siteConfig.tagline}
         </p>
         <h1 className="mt-7 max-w-4xl text-4xl font-semibold leading-[1.06] text-white sm:text-5xl lg:text-6xl">
-          Создаю сайты, которые помогают бизнесу получать клиентов
+          Сайт, который понятно представляет бизнес и собирает заявки
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-neutral-300">{siteConfig.description}</p>
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -115,10 +121,6 @@ export function HeroSection() {
             </div>
           ))}
         </div>
-      </Reveal>
-
-      <Reveal delay={120}>
-        <BrowserPreview />
       </Reveal>
     </section>
   );

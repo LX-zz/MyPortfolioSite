@@ -10,7 +10,7 @@ export function AboutSection() {
         <div
           role="img"
           aria-label="Нейтральный графический placeholder без фотографии человека"
-          className="relative min-h-[420px] overflow-hidden rounded-lg border border-cyan-100/10 bg-[#071013] shadow-[0_30px_90px_rgba(0,0,0,0.35)]"
+          className="relative min-h-[330px] overflow-hidden rounded-lg border border-cyan-100/10 bg-[#071013] shadow-[0_30px_90px_rgba(0,0,0,0.35)]"
         >
           <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(103,232,249,0.2),transparent_34%),linear-gradient(45deg,rgba(167,139,250,0.14),transparent_46%),linear-gradient(180deg,rgba(255,255,255,0.07),transparent)]" />
           <div className="absolute left-8 top-8 rounded-lg border border-white/10 bg-black/30 p-4 backdrop-blur">
@@ -18,8 +18,8 @@ export function AboutSection() {
             <div className="mt-4 h-4 w-44 rounded bg-white/70" />
             <div className="mt-2 h-3 w-32 rounded bg-white/20" />
           </div>
-          <div className="absolute bottom-8 left-8 right-8 grid gap-3 sm:grid-cols-2">
-            {qualityPoints.slice(0, 6).map((point, index) => {
+          <div className="absolute bottom-8 left-8 right-8 grid gap-3 sm:grid-cols-3">
+            {qualityPoints.slice(0, 3).map((point, index) => {
               const Icon = point.icon;
 
               return (
@@ -34,25 +34,11 @@ export function AboutSection() {
       </Reveal>
 
       <Reveal delay={120}>
-        <SectionHeading eyebrow="Обо мне" title="Кто будет работать над вашим сайтом" />
+        <SectionHeading eyebrow="Обо мне" title="Работаю лично и спокойно веду проект до запуска" />
         <p className="mt-6 text-lg leading-8 text-neutral-300">
-          Меня зовут Кирилл. Я занимаюсь разработкой современных веб-сайтов и изучаю
-          backend-разработку, базы данных, информационную безопасность и поисковую оптимизацию. В
-          работе уделяю внимание дизайну, скорости, удобству и корректной работе сайта на разных
-          устройствах.
+          Меня зовут Кирилл. Я собираю современные сайты для бизнеса: продумываю структуру,
+          аккуратно верстаю, подключаю форму заявок и готовлю проект к запуску.
         </p>
-        <div className="mt-8 grid gap-3 sm:grid-cols-2">
-          {qualityPoints.slice(6).map((point) => {
-            const Icon = point.icon;
-
-            return (
-              <div key={point.label} className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/[0.03] p-4">
-                <Icon className="size-5 text-cyan-300" />
-                <span className="text-sm font-medium text-neutral-200">{point.label}</span>
-              </div>
-            );
-          })}
-        </div>
       </Reveal>
     </section>
   );

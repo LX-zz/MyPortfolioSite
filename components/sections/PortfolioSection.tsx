@@ -46,13 +46,13 @@ export function PortfolioSection() {
         <Reveal>
           <SectionHeading
             eyebrow="Портфолио"
-            title="Демонстрационные проекты для разных ниш"
-            description="Карточки показывают направления, структуру и тип решений. Каждая страница проекта уже заведена и готова к дальнейшему наполнению."
+            title="Примеры направлений"
+            description="Несколько сценариев, под которые можно собрать сайт: услуги, компания, заявки и понятная структура."
           />
         </Reveal>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {portfolioProjects.map((project, index) => (
+          {portfolioProjects.slice(0, 3).map((project, index) => (
             <Reveal key={project.slug} delay={index * 45}>
               <article className="group h-full rounded-lg border border-cyan-100/10 bg-[#071013]/85 p-4 transition hover:-translate-y-1 hover:border-cyan-200/35 hover:shadow-[0_24px_70px_rgba(103,232,249,0.08)]">
                 <ProjectPlaceholder
@@ -65,7 +65,7 @@ export function PortfolioSection() {
                   <h3 className="mt-2 text-xl font-semibold text-white">{project.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-neutral-400">{project.description}</p>
                   <div className="mt-5 flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
+                    {project.technologies.slice(0, 2).map((tech) => (
                       <span
                         key={tech}
                         className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-neutral-300"

@@ -12,7 +12,7 @@ export function PricingSection() {
         <Reveal>
           <SectionHeading
             eyebrow="Цены"
-            title="Стартовые ориентиры по стоимости"
+            title="Понятные стартовые цены"
             description="Итоговая стоимость рассчитывается после обсуждения проекта."
           />
         </Reveal>
@@ -51,7 +51,7 @@ export function PricingSection() {
                   <h3 className="mt-6 text-2xl font-semibold text-white">{plan.title}</h3>
                   <p className="mt-3 text-3xl font-bold text-cyan-100">{plan.price}</p>
                   <ul className="mt-7 grid gap-3">
-                    {plan.features.map((feature) => (
+                    {plan.features.slice(0, 3).map((feature) => (
                       <li key={feature} className="flex gap-3 text-sm leading-6 text-neutral-300">
                         <Check
                           className={cn(

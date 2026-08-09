@@ -26,9 +26,9 @@ import { budgetOptions, serviceOptions } from "@/types/lead";
 
 export const siteConfig = {
   name: "2К Digital",
-  tagline: "Создание сайтов под ключ, техническая поддержка и базовое SEO",
+  tagline: "Сайты под ключ для малого бизнеса",
   description:
-    "Разработка современных сайтов под ключ: дизайн, программирование, запуск, аналитика и базовая SEO-оптимизация.",
+    "Дизайн, разработка, запуск и базовая SEO-подготовка без лишней сложности.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   contacts: {
     telegram: "@username",
@@ -40,14 +40,11 @@ export const siteConfig = {
   nav: [
     { label: "Услуги", href: "#services" },
     { label: "Портфолио", href: "#portfolio" },
-    { label: "Этапы работы", href: "#process" },
     { label: "Цены", href: "#pricing" },
-    { label: "Обо мне", href: "#about" },
     { label: "Контакты", href: "#contacts" },
   ],
   advantages: [
     "Адаптация под смартфоны",
-    "Базовая SEO-настройка",
     "Подключение аналитики",
     "Поддержка после запуска",
   ],

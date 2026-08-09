@@ -12,7 +12,7 @@ export function ContactsSection() {
           <SectionHeading
             eyebrow="Контакты"
             title="Можно начать с короткого сообщения"
-            description="Опишите нишу, задачу и примерный формат сайта. Если вводных пока мало, достаточно пары предложений."
+            description="Опишите нишу и задачу в двух-трех предложениях."
           />
           <div className="mt-8 grid gap-4 text-neutral-300">
             <a
@@ -52,12 +52,6 @@ export function ContactsSection() {
               >
                 Оставить заявку
               </a>
-            </div>
-            <div className="mt-6 rounded-lg border border-cyan-100/10 bg-white/[0.03] p-5">
-              <p className="text-sm leading-7 text-cyan-50">
-                Обычно достаточно коротко описать нишу, нужный формат сайта и желаемый срок запуска.
-                Остальные детали можно спокойно уточнить в переписке.
-              </p>
             </div>
           </div>
         </Reveal>
