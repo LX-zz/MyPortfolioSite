@@ -9,8 +9,6 @@ const eslintConfig = [
       ".next/**",
       "node_modules/**",
       "coverage/**",
-      "prisma/dev.db",
-      "prisma/dev.db-journal",
     ],
   },
 ];

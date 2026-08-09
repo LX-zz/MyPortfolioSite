@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { prisma } from "@/lib/prisma";
+import { sendTelegramLead } from "@/lib/telegram";
 import { leadSchema } from "@/lib/validation";
 
 export const runtime = "nodejs";
@@ -30,17 +30,7 @@ export async function POST(request: Request) {
       });
     }
 
-    await prisma.lead.create({
-      data: {
-        name: data.name,
-        phone: data.phone ?? null,
-        telegram: data.telegram ?? null,
-        service: data.service,
-        budget: data.budget,
-        comment: data.comment ?? null,
-        status: "Новая",
-      },
-    });
+    await sendTelegramLead(data);
 
     return NextResponse.json({
       ok: true,
