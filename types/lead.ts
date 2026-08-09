@@ -14,7 +14,3 @@ export const budgetOptions = [
   "Более 70 000 ₽",
   "Пока не определился",
 ] as const;
-
-export const leadStatusOptions = ["Новая", "В работе", "Завершена", "Отказ"] as const;
-
-export type LeadStatus = (typeof leadStatusOptions)[number];
