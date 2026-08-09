@@ -63,6 +63,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="ru">
       <body>
+        <div className="site-backdrop" aria-hidden="true">
+          <div className="site-backdrop__aura" />
+          <div className="site-backdrop__grid" />
+          <div className="site-backdrop__plane site-backdrop__plane--one" />
+          <div className="site-backdrop__plane site-backdrop__plane--two" />
+          <div className="site-backdrop__plane site-backdrop__plane--three" />
+          <div className="site-backdrop__beam site-backdrop__beam--one" />
+          <div className="site-backdrop__beam site-backdrop__beam--two" />
+          <div className="site-backdrop__grain" />
+        </div>
         <Header />
         {children}
         <Footer />
