@@ -31,9 +31,9 @@ export const siteConfig = {
     "Дизайн, разработка, запуск и базовая SEO-подготовка без лишней сложности.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   contacts: {
-    telegram: "@username",
-    telegramUrl: "https://t.me/username",
-    email: "hello@example.ru",
+    telegram: "@xmoeb",
+    telegramUrl: "https://t.me/xmoeb",
+    email: "gollfifa1@gmail.com",
     city: "Москва",
     workTime: "ежедневно с 10:00 до 21:00",
   },
