@@ -1,15 +1,12 @@
 import {
   BarChart3,
-  BriefcaseBusiness,
   Building2,
-  Car,
   ChartNoAxesCombined,
   CheckCircle2,
   Code2,
   FileSearch,
   Gauge,
   Headphones,
-  Landmark,
   LayoutDashboard,
   PanelsTopLeft,
   PencilRuler,
@@ -17,9 +14,6 @@ import {
   Settings2,
   ShieldCheck,
   ShoppingCart,
-  Sparkles,
-  Store,
-  Wrench,
 } from "lucide-react";
 
 import { budgetOptions, serviceOptions } from "@/types/lead";
@@ -39,7 +33,7 @@ export const siteConfig = {
   },
   nav: [
     { label: "Услуги", href: "#services" },
-    { label: "Портфолио", href: "#portfolio" },
+    { label: "Примеры", href: "#portfolio" },
     { label: "Цены", href: "#pricing" },
     { label: "Контакты", href: "#contacts" },
   ],
@@ -80,57 +74,6 @@ export const services = [
     title: "Поддержка сайта",
     description: "Исправление ошибок, обновление информации и развитие проекта.",
     icon: Headphones,
-  },
-];
-
-export const portfolioProjects = [
-  {
-    slug: "detailing",
-    title: "Сайт детейлинг-центра",
-    direction: "Автоуслуги",
-    description: "Витрина премиальных услуг, запись на консультацию и акцент на визуальном доверии.",
-    technologies: ["Next.js", "SEO", "Аналитика"],
-    icon: Sparkles,
-  },
-  {
-    slug: "autoservice",
-    title: "Сайт автосервиса",
-    direction: "Сервис и ремонт",
-    description: "Структура услуг, быстрые заявки, блоки доверия и понятная навигация для клиентов.",
-    technologies: ["React", "Каталог услуг", "Формы"],
-    icon: Wrench,
-  },
-  {
-    slug: "construction",
-    title: "Сайт строительной компании",
-    direction: "Строительство",
-    description: "Презентация направлений, портфолио объектов и сбор заявок на расчет.",
-    technologies: ["Next.js", "CMS-ready", "Адаптив"],
-    icon: BriefcaseBusiness,
-  },
-  {
-    slug: "cafe",
-    title: "Сайт кафе",
-    direction: "HoReCa",
-    description: "Меню, атмосфера заведения, контакты и сценарии быстрого бронирования.",
-    technologies: ["UI", "Меню", "Mobile first"],
-    icon: Store,
-  },
-  {
-    slug: "car-rental",
-    title: "Сайт аренды автомобилей",
-    direction: "Прокат",
-    description: "Каталог машин, фильтрация, карточки предложений и заявка на бронь.",
-    technologies: ["Каталог", "Фильтры", "UX"],
-    icon: Car,
-  },
-  {
-    slug: "lawyer",
-    title: "Сайт юридических услуг",
-    direction: "Консалтинг",
-    description: "Сдержанный коммерческий сайт с услугами, кейсами и формой обращения.",
-    technologies: ["SEO", "Контент", "Формы"],
-    icon: Landmark,
   },
 ];
 
