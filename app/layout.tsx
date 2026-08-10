@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Geologica, Manrope } from "next/font/google";
 
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
@@ -7,6 +8,20 @@ import { siteConfig } from "@/config/site";
 import "./globals.css";
 
 const metadataBase = new URL(siteConfig.url);
+
+const manrope = Manrope({
+  subsets: ["cyrillic", "latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const geologica = Geologica({
+  subsets: ["cyrillic", "latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase,
@@ -61,7 +76,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ru">
+    <html lang="ru" className={`${manrope.variable} ${geologica.variable}`}>
       <body>
         <div className="site-backdrop" aria-hidden="true">
           <div className="site-backdrop__aura" />
