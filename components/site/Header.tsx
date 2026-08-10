@@ -11,13 +11,13 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-cyan-100/10 bg-[#05080a]/[0.78] backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-[#05080a]/[0.62] backdrop-blur-xl">
       <div className="container-page flex h-20 items-center justify-between gap-6">
-        <Link href="/" className="focus-ring flex items-center gap-3" aria-label="2К Digital">
-          <span className="grid size-10 place-items-center rounded-lg border border-cyan-100/20 bg-white/[0.03] text-sm font-black text-cyan-50 shadow-[0_0_34px_rgba(103,232,249,0.12)] backdrop-blur">
-            2К
+        <Link href="/" className="focus-ring group flex items-baseline gap-3" aria-label="2К Digital">
+          <span className="text-xl font-semibold text-white transition group-hover:text-cyan-100">
+            {siteConfig.name}
           </span>
-          <span className="text-lg font-semibold text-white/90">{siteConfig.name}</span>
+          <span className="hidden h-px w-10 bg-cyan-200/40 transition group-hover:w-14 sm:block" />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Основная навигация">
@@ -25,7 +25,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="focus-ring rounded-md px-3 py-2 text-sm font-medium text-neutral-300 transition hover:bg-white/[0.04] hover:text-cyan-50"
+              className="focus-ring px-3 py-2 text-sm font-medium text-neutral-300 transition hover:text-cyan-50"
             >
               {item.label}
             </a>
@@ -35,7 +35,7 @@ export function Header() {
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href="#lead-form"
-            className="focus-ring inline-flex items-center gap-2 rounded-md border border-cyan-100/20 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-cyan-50 shadow-[0_14px_46px_rgba(103,232,249,0.08)] transition hover:-translate-y-0.5 hover:border-cyan-200/45 hover:bg-cyan-300/10"
+            className="focus-ring inline-flex items-center gap-2 border-b border-cyan-200/45 px-1 py-2 text-sm font-semibold text-cyan-50 transition hover:border-white hover:text-white"
           >
             Обсудить проект
             <ArrowUpRight className="size-4" />
@@ -47,7 +47,7 @@ export function Header() {
           aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((value) => !value)}
-          className="focus-ring inline-grid size-11 place-items-center rounded-md border border-cyan-100/10 text-white transition hover:border-cyan-200/40 hover:bg-white/5 lg:hidden"
+          className="focus-ring inline-grid size-11 place-items-center border border-cyan-100/10 text-white transition hover:border-cyan-200/40 hover:bg-white/5 lg:hidden"
         >
           {isOpen ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
@@ -55,7 +55,7 @@ export function Header() {
 
       <div
         className={cn(
-          "overflow-hidden border-t border-cyan-100/10 bg-[#05080a] transition-[max-height,opacity] duration-300 lg:hidden",
+          "overflow-hidden border-t border-cyan-100/10 bg-[#05080a]/95 transition-[max-height,opacity] duration-300 lg:hidden",
           isOpen ? "max-h-[480px] opacity-100" : "max-h-0 opacity-0",
         )}
       >
@@ -65,7 +65,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               onClick={() => setIsOpen(false)}
-            className="focus-ring rounded-md px-3 py-3 text-base font-medium text-neutral-200 transition hover:bg-white/5 hover:text-cyan-50"
+              className="focus-ring border-b border-white/10 px-0 py-3 text-base font-medium text-neutral-200 transition hover:text-cyan-50"
             >
               {item.label}
             </a>
@@ -73,7 +73,7 @@ export function Header() {
           <a
             href="#lead-form"
             onClick={() => setIsOpen(false)}
-            className="focus-ring mt-2 inline-flex items-center justify-center gap-2 rounded-md border border-cyan-100/20 bg-cyan-300/10 px-5 py-3 text-sm font-semibold text-cyan-50"
+            className="focus-ring mt-2 inline-flex items-center justify-center gap-2 border border-cyan-100/20 px-5 py-3 text-sm font-semibold text-cyan-50"
           >
             Обсудить проект
             <ArrowUpRight className="size-4" />

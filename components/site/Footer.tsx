@@ -7,14 +7,12 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-cyan-100/10 bg-[#05080a]/[0.92] py-10">
+    <footer className="border-t border-cyan-100/10 bg-[#05080a]/[0.72] py-10">
       <div className="container-page grid gap-9 lg:grid-cols-[1.2fr_1fr_1fr]">
         <div>
-          <Link href="/" className="focus-ring inline-flex items-center gap-3">
-            <span className="grid size-10 place-items-center rounded-lg border border-cyan-100/20 bg-white/[0.03] text-sm font-black text-cyan-50 shadow-[0_0_34px_rgba(103,232,249,0.1)]">
-              2К
-            </span>
+          <Link href="/" className="focus-ring inline-flex items-baseline gap-3">
             <span className="text-lg font-semibold text-white/90">{siteConfig.name}</span>
+            <span className="h-px w-10 bg-cyan-200/35" />
           </Link>
           <p className="mt-4 max-w-md text-sm leading-6 text-neutral-400">{siteConfig.tagline}</p>
           <p className="mt-6 text-sm text-neutral-500">© {year} 2К Digital</p>

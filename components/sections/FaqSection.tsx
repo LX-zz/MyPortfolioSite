@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function FaqSection() {
   return (
-    <section className="container-page py-20">
+    <section className="container-page py-20 lg:py-24">
       <Reveal>
         <SectionHeading
           eyebrow="FAQ"
@@ -15,11 +15,11 @@ export function FaqSection() {
         />
       </Reveal>
 
-      <div className="mt-10 grid gap-3">
+      <div className="mt-10 divide-y divide-white/10 border-y border-white/10">
         {faqs.slice(0, 4).map((faq, index) => (
           <Reveal key={faq.question} delay={index * 35}>
-            <details className="group rounded-lg border border-white/10 bg-neutral-950/[0.82] p-5 open:border-cyan-300/[0.35]">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-lg font-semibold text-white">
+            <details className="group py-5">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-lg font-semibold text-white transition hover:text-cyan-50">
                 {faq.question}
                 <ChevronDown className="size-5 shrink-0 text-cyan-300 transition group-open:rotate-180" />
               </summary>

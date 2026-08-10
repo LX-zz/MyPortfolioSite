@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="border-y border-cyan-100/10 bg-[#061014]/[0.58] py-20">
+    <section id="pricing" className="py-20 lg:py-24">
       <div className="container-page">
         <Reveal>
           <SectionHeading
@@ -17,7 +17,7 @@ export function PricingSection() {
           />
         </Reveal>
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+        <div className="mt-12 grid border-y border-white/10 lg:grid-cols-3">
           {pricingPlans.map((plan, index) => {
             const Icon = plan.icon;
 
@@ -25,25 +25,25 @@ export function PricingSection() {
               <Reveal key={plan.title} delay={index * 60}>
                 <article
                   className={cn(
-                    "h-full rounded-lg border bg-[#071013]/86 p-6 transition hover:-translate-y-1",
+                    "h-full px-0 py-7 lg:border-r lg:border-white/10 lg:px-7",
                     plan.highlighted
-                      ? "border-cyan-200/35 shadow-[0_24px_80px_rgba(103,232,249,0.12)]"
-                      : "border-cyan-100/10 hover:border-violet-300/30",
+                      ? "bg-gradient-to-b from-cyan-300/[0.055] to-transparent"
+                      : "",
                   )}
                 >
                   <div className="flex items-center justify-between gap-4">
                     <div
                       className={cn(
-                        "grid size-12 place-items-center rounded-lg border",
+                        "grid size-12 place-items-center border",
                         plan.highlighted
-                          ? "border-cyan-200/20 bg-cyan-300/10 text-cyan-200"
-                          : "border-violet-300/20 bg-violet-300/10 text-violet-200",
+                          ? "border-cyan-200/25 text-cyan-200"
+                          : "border-violet-300/20 text-violet-200",
                       )}
                     >
                       <Icon className="size-6" />
                     </div>
                     {plan.highlighted ? (
-                      <span className="rounded-md border border-cyan-200/25 bg-cyan-300/10 px-3 py-1 text-xs font-bold text-cyan-50">
+                      <span className="border-b border-cyan-200/45 px-1 py-1 text-xs font-bold text-cyan-50">
                         Популярно
                       </span>
                     ) : null}
@@ -66,10 +66,10 @@ export function PricingSection() {
                   <a
                     href="#lead-form"
                     className={cn(
-                      "focus-ring mt-8 inline-flex w-full items-center justify-center rounded-md px-5 py-3 text-sm font-semibold transition",
+                      "focus-ring mt-8 inline-flex w-full items-center justify-center border px-5 py-3 text-sm font-semibold transition",
                       plan.highlighted
-                        ? "border border-cyan-100/25 bg-cyan-300/10 text-cyan-50 hover:border-cyan-200/45 hover:bg-cyan-300/[0.16]"
-                        : "border border-white/[0.12] text-white hover:border-violet-300/40 hover:bg-violet-300/10",
+                        ? "border-cyan-100/25 bg-cyan-300/[0.08] text-cyan-50 hover:border-cyan-200/45 hover:bg-cyan-300/[0.14]"
+                        : "border-white/[0.12] text-white hover:border-violet-300/40 hover:bg-violet-300/10",
                     )}
                   >
                     Обсудить тариф

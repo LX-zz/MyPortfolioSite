@@ -72,7 +72,7 @@ function FieldError({ errors }: { errors?: string[] }) {
 }
 
 const inputClass =
-  "focus-ring w-full rounded-md border border-cyan-100/10 bg-white/[0.035] px-4 py-3 text-sm text-white transition placeholder:text-neutral-500 hover:border-cyan-100/20 focus:border-cyan-200 disabled:cursor-not-allowed disabled:opacity-60";
+  "focus-ring w-full rounded-none border-0 border-b border-cyan-100/20 bg-transparent px-0 py-3 text-base text-white transition placeholder:text-neutral-500 hover:border-cyan-100/35 focus:border-cyan-200 disabled:cursor-not-allowed disabled:opacity-60";
 
 export function LeadForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -118,7 +118,7 @@ export function LeadForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-5" noValidate>
+    <form onSubmit={handleSubmit} className="grid gap-6" noValidate>
       <div className="hidden" aria-hidden="true">
         <label htmlFor="website">Сайт</label>
         <input id="website" name="website" tabIndex={-1} autoComplete="off" />
@@ -232,7 +232,7 @@ export function LeadForm() {
         <FieldError errors={errors.comment} />
       </label>
 
-      <label className="flex gap-3 rounded-lg border border-white/10 bg-white/[0.03] p-4 text-sm leading-6 text-neutral-300">
+      <label className="flex gap-3 border-y border-white/10 py-4 text-sm leading-6 text-neutral-300">
         <input
           type="checkbox"
           name="consent"
@@ -257,10 +257,10 @@ export function LeadForm() {
       {message ? (
         <div
           className={cn(
-            "flex items-start gap-3 rounded-lg border p-4 text-sm leading-6",
+            "flex items-start gap-3 border-l-2 py-3 pl-4 text-sm leading-6",
             isSuccess
-              ? "border-emerald-300/25 bg-emerald-300/10 text-emerald-100"
-              : "border-red-300/25 bg-red-300/10 text-red-100",
+              ? "border-emerald-300 text-emerald-100"
+              : "border-red-300 text-red-100",
           )}
           role="status"
         >
@@ -272,7 +272,7 @@ export function LeadForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="focus-ring inline-flex items-center justify-center gap-2 rounded-md border border-cyan-100/25 bg-cyan-300/10 px-6 py-4 text-sm font-bold text-cyan-50 shadow-[0_18px_58px_rgba(103,232,249,0.1)] transition hover:-translate-y-0.5 hover:border-cyan-200/45 hover:bg-cyan-300/[0.16] disabled:cursor-not-allowed disabled:opacity-65 disabled:hover:translate-y-0"
+        className="focus-ring inline-flex items-center justify-center gap-2 border border-cyan-100/25 bg-cyan-300/[0.08] px-6 py-4 text-sm font-bold text-cyan-50 shadow-[0_18px_58px_rgba(103,232,249,0.08)] transition hover:-translate-y-0.5 hover:border-cyan-200/45 hover:bg-cyan-300/[0.14] disabled:cursor-not-allowed disabled:opacity-65 disabled:hover:translate-y-0"
       >
         {isSubmitting ? <Loader2 className="size-4 animate-spin" /> : <Send className="size-4" />}
         {isSubmitting ? "Отправка..." : "Отправить заявку"}

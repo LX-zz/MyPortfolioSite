@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function ServicesSection() {
   return (
-    <section id="services" className="container-page py-20">
+    <section id="services" className="container-page py-20 lg:py-24">
       <Reveal>
         <SectionHeading
           eyebrow="Услуги"
@@ -16,26 +16,29 @@ export function ServicesSection() {
         />
       </Reveal>
 
-      <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-12 divide-y divide-white/10 border-y border-white/10">
         {services.slice(0, 3).map((service, index) => {
           const Icon = service.icon;
 
           return (
             <Reveal key={service.title} delay={index * 45}>
-              <article className="group h-full rounded-lg border border-cyan-100/10 bg-[#071013]/80 p-6 shadow-[0_20px_70px_rgba(0,0,0,0.22)] transition hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-[#0b1418]">
+              <article className="group grid gap-5 py-7 md:grid-cols-[0.18fr_0.2fr_0.9fr_auto] md:items-center">
+                <span className="text-sm font-medium text-neutral-500">{String(index + 1).padStart(2, "0")}</span>
                 <div
                   className={cn(
-                    "grid size-12 place-items-center rounded-lg border transition",
+                    "grid size-12 place-items-center border transition group-hover:border-white/25",
                     index % 2 === 0
-                      ? "border-cyan-200/20 bg-cyan-300/10 text-cyan-200 group-hover:bg-cyan-300/15"
-                      : "border-violet-300/20 bg-violet-300/10 text-violet-200 group-hover:bg-violet-300/15",
+                      ? "border-cyan-200/20 text-cyan-200"
+                      : "border-violet-300/20 text-violet-200",
                   )}
                 >
                   <Icon className="size-6" />
                 </div>
-                <h3 className="mt-6 text-xl font-semibold text-white">{service.title}</h3>
-                <p className="mt-3 min-h-16 text-sm leading-6 text-neutral-400">{service.description}</p>
-                <a href="#lead-form" className="focus-ring mt-6 inline-flex items-center gap-2 rounded-md text-sm font-semibold text-cyan-100 transition hover:text-white">
+                <div>
+                  <h3 className="text-2xl font-semibold text-white">{service.title}</h3>
+                  <p className="mt-2 max-w-2xl text-sm leading-6 text-neutral-400">{service.description}</p>
+                </div>
+                <a href="#lead-form" className="focus-ring inline-flex items-center gap-2 text-sm font-semibold text-cyan-100 transition hover:text-white">
                   Обсудить
                   <ArrowRight className="size-4 transition group-hover:translate-x-1" />
                 </a>

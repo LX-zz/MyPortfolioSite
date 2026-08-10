@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function ProcessSection() {
   return (
-    <section id="process" className="container-page py-20">
+    <section id="process" className="container-page py-20 lg:py-24">
       <Reveal>
         <SectionHeading
           eyebrow="Этапы работы"
@@ -14,19 +14,20 @@ export function ProcessSection() {
         />
       </Reveal>
 
-      <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-12 grid border-l border-white/10 lg:grid-cols-4 lg:border-l-0 lg:border-t">
         {processSteps.slice(0, 4).map((step, index) => (
           <Reveal key={step} delay={index * 45}>
-            <article className="relative min-h-40 rounded-lg border border-cyan-100/10 bg-[#071013]/80 p-6 transition hover:border-cyan-200/35">
+            <article className="relative min-h-36 px-6 py-7 lg:border-r lg:border-white/10 lg:px-7">
+              <span className="absolute -left-[5px] top-8 size-2 bg-cyan-200 lg:-top-[5px] lg:left-7" />
               <span
                 className={cn(
-                  "text-5xl font-semibold",
-                  index % 2 === 0 ? "text-cyan-300/[0.22]" : "text-violet-300/20",
+                  "text-sm font-semibold",
+                  index % 2 === 0 ? "text-cyan-200" : "text-violet-200",
                 )}
               >
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-5 text-xl font-semibold text-white">{step}</h3>
+              <h3 className="mt-5 max-w-48 text-xl font-semibold leading-snug text-white">{step}</h3>
             </article>
           </Reveal>
         ))}
