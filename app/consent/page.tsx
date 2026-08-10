@@ -29,7 +29,7 @@ const processingActions = [
 export default function ConsentPage() {
   return (
     <main className="container-page pb-20 pt-32">
-      <article className="mx-auto max-w-4xl rounded-lg border border-cyan-100/10 bg-[#071013]/90 p-6 leading-7 text-neutral-300 shadow-[0_24px_80px_rgba(0,0,0,0.26)] md:p-10">
+      <article className="mx-auto max-w-4xl leading-7 text-neutral-300">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">
           Документ
         </p>

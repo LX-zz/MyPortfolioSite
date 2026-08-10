@@ -14,22 +14,22 @@ export function ContactsSection() {
             title="Можно начать с короткого сообщения"
             description="Опишите нишу и задачу в двух-трех предложениях."
           />
-          <div className="mt-8 divide-y divide-white/10 border-y border-white/10 text-neutral-300">
+          <div className="mt-8 grid gap-4 text-neutral-300">
             <a
               href={siteConfig.contacts.telegramUrl}
-              className="focus-ring flex items-center gap-3 py-4 transition hover:text-cyan-50"
+              className="focus-ring flex items-center gap-3 transition hover:text-cyan-50"
             >
               <MessageCircle className="size-5 text-cyan-300" />
               {siteConfig.contacts.telegram}
             </a>
             <a
               href={`mailto:${siteConfig.contacts.email}`}
-              className="focus-ring flex items-center gap-3 py-4 transition hover:text-cyan-50"
+              className="focus-ring flex items-center gap-3 transition hover:text-cyan-50"
             >
               <Mail className="size-5 text-cyan-300" />
               {siteConfig.contacts.email}
             </a>
-            <div className="flex items-center gap-3 py-4">
+            <div className="flex items-center gap-3">
               <MapPin className="size-5 text-cyan-300" />
               {siteConfig.contacts.city}, {siteConfig.contacts.workTime}
             </div>
@@ -37,21 +37,22 @@ export function ContactsSection() {
         </Reveal>
 
         <Reveal delay={120}>
-          <div className="border-l border-cyan-200/20 pl-6">
+          <div>
             <p className="max-w-xl text-2xl font-semibold leading-snug text-white">
               Быстрее всего начать с сообщения в Telegram. Если удобнее оставить бриф, форма выше отправит заявку туда же.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
                 href={siteConfig.contacts.telegramUrl}
-                className="focus-ring inline-flex items-center justify-center gap-2 border border-cyan-100/25 bg-cyan-300/[0.08] px-5 py-4 text-sm font-bold text-cyan-50 transition hover:-translate-y-0.5 hover:border-cyan-200/45 hover:bg-cyan-300/[0.14]"
+                className="focus-ring group inline-flex items-center gap-3 py-4 text-sm font-bold text-cyan-50 transition hover:text-white"
               >
                 <Send className="size-4" />
                 Написать в Telegram
+                <span className="h-px w-10 bg-cyan-100/45 transition group-hover:w-14 group-hover:bg-white" />
               </a>
               <a
                 href="#lead-form"
-                className="focus-ring inline-flex items-center justify-center gap-2 border-b border-white/[0.24] px-1 py-4 text-sm font-semibold text-white transition hover:border-cyan-300/50 hover:text-cyan-50"
+                className="focus-ring inline-flex items-center gap-2 py-4 text-sm font-semibold text-white/80 transition hover:text-cyan-50"
               >
                 Оставить заявку
               </a>

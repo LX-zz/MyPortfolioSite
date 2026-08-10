@@ -7,7 +7,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-cyan-100/10 bg-[#05080a]/[0.72] py-10">
+    <footer className="bg-[#05080a]/[0.48] py-10">
       <div className="container-page grid gap-9 lg:grid-cols-[1.2fr_1fr_1fr]">
         <div>
           <Link href="/" className="focus-ring inline-flex items-baseline gap-3">

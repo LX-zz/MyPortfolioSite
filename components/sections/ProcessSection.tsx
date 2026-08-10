@@ -1,5 +1,4 @@
 import { processSteps } from "@/config/site";
-import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -14,20 +13,17 @@ export function ProcessSection() {
         />
       </Reveal>
 
-      <div className="mt-12 grid border-l border-white/10 lg:grid-cols-4 lg:border-l-0 lg:border-t">
+      <div className="mt-12 grid gap-8 lg:grid-cols-4">
         {processSteps.slice(0, 4).map((step, index) => (
           <Reveal key={step} delay={index * 45}>
-            <article className="relative min-h-36 px-6 py-7 lg:border-r lg:border-white/10 lg:px-7">
-              <span className="absolute -left-[5px] top-8 size-2 bg-cyan-200 lg:-top-[5px] lg:left-7" />
-              <span
-                className={cn(
-                  "text-sm font-semibold",
-                  index % 2 === 0 ? "text-cyan-200" : "text-violet-200",
-                )}
-              >
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-5 max-w-48 text-xl font-semibold leading-snug text-white">{step}</h3>
+            <article className="group relative py-4">
+              <div className="flex items-center gap-3">
+                <span className="font-display text-sm text-neutral-500">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="h-px w-10 bg-cyan-100/25 transition group-hover:w-14 group-hover:bg-cyan-100/55" />
+              </div>
+              <h3 className="mt-5 max-w-56 text-xl font-semibold leading-snug text-white">{step}</h3>
             </article>
           </Reveal>
         ))}

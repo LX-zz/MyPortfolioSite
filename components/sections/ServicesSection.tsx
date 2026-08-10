@@ -15,7 +15,7 @@ export function ServicesSection() {
         />
       </Reveal>
 
-      <div className="mt-12 divide-y divide-white/10 border-y border-white/10">
+      <div className="mt-12 grid gap-9">
         {services.slice(0, 3).map((service, index) => (
           <Reveal key={service.title} delay={index * 45}>
             <article className="group grid gap-5 py-7 md:grid-cols-[0.18fr_0.9fr_auto] md:items-center">

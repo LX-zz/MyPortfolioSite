@@ -232,7 +232,7 @@ export function LeadForm() {
         <FieldError errors={errors.comment} />
       </label>
 
-      <label className="flex gap-3 border-y border-white/10 py-4 text-sm leading-6 text-neutral-300">
+      <label className="flex gap-3 py-2 text-sm leading-6 text-neutral-300">
         <input
           type="checkbox"
           name="consent"
@@ -257,10 +257,8 @@ export function LeadForm() {
       {message ? (
         <div
           className={cn(
-            "flex items-start gap-3 border-l-2 py-3 pl-4 text-sm leading-6",
-            isSuccess
-              ? "border-emerald-300 text-emerald-100"
-              : "border-red-300 text-red-100",
+            "flex items-start gap-3 py-3 text-sm leading-6",
+            isSuccess ? "text-emerald-100" : "text-red-100",
           )}
           role="status"
         >
@@ -272,10 +270,11 @@ export function LeadForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="focus-ring inline-flex items-center justify-center gap-2 border border-cyan-100/25 bg-cyan-300/[0.08] px-6 py-4 text-sm font-bold text-cyan-50 shadow-[0_18px_58px_rgba(103,232,249,0.08)] transition hover:-translate-y-0.5 hover:border-cyan-200/45 hover:bg-cyan-300/[0.14] disabled:cursor-not-allowed disabled:opacity-65 disabled:hover:translate-y-0"
+        className="focus-ring group inline-flex items-center gap-3 py-4 text-sm font-bold text-cyan-50 transition hover:text-white disabled:cursor-not-allowed disabled:opacity-65"
       >
         {isSubmitting ? <Loader2 className="size-4 animate-spin" /> : <Send className="size-4" />}
         {isSubmitting ? "Отправка..." : "Отправить заявку"}
+        <span className="h-px w-10 bg-cyan-100/45 transition group-hover:w-14 group-hover:bg-white" />
       </button>
     </form>
   );

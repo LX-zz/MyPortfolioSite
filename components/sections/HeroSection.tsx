@@ -6,20 +6,13 @@ import { Reveal } from "@/components/ui/Reveal";
 function SignalField() {
   return (
     <div className="animate-float-panel relative h-[520px] w-[520px] opacity-80">
-      <div className="absolute inset-0 rotate-[-10deg] border-l border-cyan-200/20" />
-      <div className="absolute inset-y-8 left-20 w-px bg-gradient-to-b from-transparent via-cyan-200/30 to-transparent" />
-      <div className="absolute inset-y-0 left-40 w-px bg-gradient-to-b from-transparent via-violet-200/25 to-transparent" />
-      <div className="absolute inset-y-16 left-64 w-px bg-gradient-to-b from-transparent via-cyan-200/20 to-transparent" />
-      <div className="absolute inset-x-2 top-24 h-px bg-gradient-to-r from-transparent via-cyan-200/30 to-transparent" />
-      <div className="absolute inset-x-16 top-52 h-px bg-gradient-to-r from-transparent via-violet-200/25 to-transparent" />
-      <div className="absolute inset-x-8 bottom-24 h-px bg-gradient-to-r from-transparent via-cyan-200/20 to-transparent" />
-      <div className="absolute left-14 top-16 h-28 w-28 border border-cyan-200/20" />
-      <div className="absolute right-10 top-28 h-40 w-40 border border-violet-200/15" />
-      <div className="absolute bottom-12 left-28 h-36 w-52 border border-white/10" />
-      <div className="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-200/10" />
+      <div className="absolute left-10 top-10 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(140,247,255,0.12),transparent_62%)] blur-2xl" />
+      <div className="absolute left-28 top-24 h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(199,182,255,0.12),transparent_64%)] blur-2xl" />
+      <div className="absolute left-14 top-20 h-px w-96 rotate-[-18deg] bg-gradient-to-r from-transparent via-cyan-100/45 to-transparent" />
+      <div className="absolute bottom-32 left-8 h-px w-[30rem] rotate-[-18deg] bg-gradient-to-r from-transparent via-violet-100/28 to-transparent" />
       <div className="absolute left-[46%] top-[47%] h-2 w-2 rounded-full bg-cyan-200 shadow-[0_0_28px_rgba(103,232,249,0.85)]" />
       <div className="absolute bottom-20 right-20 h-2 w-2 rounded-full bg-violet-200 shadow-[0_0_28px_rgba(167,139,250,0.7)]" />
-      <div className="absolute -right-6 bottom-2 text-[12rem] font-semibold leading-none text-white/[0.04]">
+      <div className="absolute -right-6 bottom-2 text-[12rem] font-semibold leading-none text-white/[0.035]">
         2К
       </div>
     </div>
@@ -53,14 +46,15 @@ export function HeroSection() {
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
           <a
             href="#lead-form"
-            className="focus-ring animate-button-glow inline-flex items-center justify-center gap-2 border border-cyan-100/25 bg-cyan-300/[0.08] px-6 py-4 text-sm font-bold text-cyan-50 transition hover:-translate-y-0.5 hover:border-cyan-100/45 hover:bg-cyan-300/[0.14]"
+            className="focus-ring group inline-flex items-center gap-3 py-4 text-sm font-bold text-cyan-50 transition hover:text-white"
           >
             Рассчитать стоимость
-            <ArrowRight className="size-4" />
+            <span className="h-px w-12 bg-cyan-100/50 transition group-hover:w-16 group-hover:bg-white" />
+            <ArrowRight className="size-4 transition group-hover:translate-x-1" />
           </a>
           <a
             href="#portfolio"
-            className="focus-ring inline-flex items-center justify-center gap-2 border-b border-white/[0.25] px-2 py-4 text-sm font-semibold text-white transition hover:border-violet-300/55 hover:text-violet-50"
+            className="focus-ring inline-flex items-center gap-2 py-4 text-sm font-semibold text-white/80 transition hover:text-violet-50"
           >
             Посмотреть работы
             <ArrowDownRight className="size-4" />

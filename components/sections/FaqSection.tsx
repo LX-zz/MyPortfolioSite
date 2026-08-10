@@ -15,10 +15,10 @@ export function FaqSection() {
         />
       </Reveal>
 
-      <div className="mt-10 divide-y divide-white/10 border-y border-white/10">
+      <div className="mt-10 grid gap-5">
         {faqs.slice(0, 4).map((faq, index) => (
           <Reveal key={faq.question} delay={index * 35}>
-            <details className="group py-5">
+            <details className="group py-2">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-lg font-semibold text-white transition hover:text-cyan-50">
                 {faq.question}
                 <ChevronDown className="size-5 shrink-0 text-cyan-300 transition group-open:rotate-180" />
