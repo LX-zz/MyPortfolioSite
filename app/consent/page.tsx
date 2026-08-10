@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { SiteFrame } from "@/components/site/SiteFrame";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -28,8 +29,9 @@ const processingActions = [
 
 export default function ConsentPage() {
   return (
-    <main className="container-page pb-20 pt-32">
-      <article className="mx-auto max-w-4xl leading-7 text-neutral-300">
+    <SiteFrame>
+      <main className="container-page pb-20 pt-32">
+        <article className="mx-auto max-w-4xl leading-7 text-neutral-300">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">
           Документ
         </p>
@@ -97,7 +99,8 @@ export default function ConsentPage() {
           . После получения обращения оператор прекратит обработку данных, если их дальнейшее
           хранение не требуется по закону или для защиты законных интересов.
         </p>
-      </article>
-    </main>
+        </article>
+      </main>
+    </SiteFrame>
   );
 }

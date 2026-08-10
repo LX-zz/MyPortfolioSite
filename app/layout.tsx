@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geologica, Manrope } from "next/font/google";
 
-import { Footer } from "@/components/site/Footer";
-import { Header } from "@/components/site/Header";
 import { siteConfig } from "@/config/site";
 
 import "./globals.css";
@@ -85,9 +83,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div className="site-backdrop__beam site-backdrop__beam--two" />
           <div className="site-backdrop__grain" />
         </div>
-        <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );

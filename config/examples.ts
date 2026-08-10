@@ -21,7 +21,6 @@ export type SiteExample = {
     name: string;
     detail: string;
   }>;
-  palette: "cyan" | "violet" | "mint";
 };
 
 export const siteExamples: SiteExample[] = [
@@ -61,7 +60,6 @@ export const siteExamples: SiteExample[] = [
       { name: "Керамическая защита", detail: "от 15 000 ₽" },
       { name: "Химчистка салона", detail: "от 5 000 ₽" },
     ],
-    palette: "cyan",
   },
   {
     slug: "business-card",
@@ -99,7 +97,6 @@ export const siteExamples: SiteExample[] = [
       { name: "Концепция интерьера", detail: "цвет, свет, материалы" },
       { name: "Сопровождение ремонта", detail: "контроль решений" },
     ],
-    palette: "violet",
   },
   {
     slug: "company-site",
@@ -137,7 +134,6 @@ export const siteExamples: SiteExample[] = [
       { name: "Строительство", detail: "этапы и контроль" },
       { name: "Инженерия", detail: "сети и коммуникации" },
     ],
-    palette: "mint",
   },
 ];
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { SiteFrame } from "@/components/site/SiteFrame";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -34,8 +35,9 @@ const userRights = [
 
 export default function PrivacyPage() {
   return (
-    <main className="container-page pb-20 pt-32">
-      <article className="mx-auto max-w-4xl leading-7 text-neutral-300">
+    <SiteFrame>
+      <main className="container-page pb-20 pt-32">
+        <article className="mx-auto max-w-4xl leading-7 text-neutral-300">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">
           Документ
         </p>
@@ -153,7 +155,8 @@ export default function PrivacyPage() {
           используемых сервисов или требований законодательства. Актуальная версия всегда размещается
           на этой странице.
         </p>
-      </article>
-    </main>
+        </article>
+      </main>
+    </SiteFrame>
   );
 }
