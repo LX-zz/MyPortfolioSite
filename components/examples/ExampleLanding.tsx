@@ -248,21 +248,23 @@ function BusinessCardSite({ example }: { example: SiteExample }) {
             </a>
           </header>
 
-          <div className="grid gap-12 pb-16 pt-16 xl:grid-cols-[0.58fr_0.42fr] xl:items-center">
-            <div>
-              <h1 className="max-w-5xl text-5xl font-normal leading-[0.98] md:text-7xl xl:text-8xl">
+          <div className="grid gap-12 pb-16 pt-14 xl:grid-cols-[minmax(0,0.54fr)_minmax(22rem,0.46fr)] xl:items-center">
+            <div className="min-w-0">
+              <h1 className="max-w-[12ch] text-5xl font-normal leading-[1.02] sm:text-6xl md:text-7xl xl:text-[5rem]">
                 {example.headline}
               </h1>
               <p className="mt-8 max-w-xl text-xl leading-9 text-[#655448]">{example.subline}</p>
             </div>
 
-            <div className="relative min-h-[34rem]">
-              <div className="absolute right-0 top-0 h-72 w-56 bg-[#c7b49d]" />
-              <div className="absolute left-0 top-20 h-80 w-64 bg-[#dfd1bd]" />
-              <div className="absolute bottom-0 right-12 h-52 w-72 bg-[#7f6b5d]" />
-              <div className="absolute left-8 top-28 h-64 w-44 bg-[linear-gradient(135deg,#efe5d2,#b89476)] shadow-2xl shadow-[#241812]/10" />
-              <div className="absolute right-10 top-12 h-60 w-40 bg-[linear-gradient(160deg,#2c211b,#836f5d)] shadow-2xl shadow-[#241812]/14" />
-              <p className="absolute bottom-10 left-0 max-w-xs text-sm leading-7 text-[#6f5d50]">
+            <div className="w-full max-w-[35rem] justify-self-end xl:pt-14">
+              <div className="relative min-h-[30rem] overflow-hidden">
+                <div className="absolute right-4 top-0 h-64 w-52 bg-[#c7b49d]" />
+                <div className="absolute left-6 top-20 h-72 w-56 bg-[#dfd1bd]" />
+                <div className="absolute bottom-14 right-0 h-48 w-64 bg-[#d3b894]" />
+                <div className="absolute left-16 top-28 h-60 w-40 bg-[linear-gradient(135deg,#efe5d2,#b89476)] shadow-2xl shadow-[#241812]/10" />
+                <div className="absolute right-16 top-14 h-56 w-40 bg-[linear-gradient(160deg,#2c211b,#836f5d)] shadow-2xl shadow-[#241812]/14" />
+              </div>
+              <p className="mt-6 max-w-sm text-sm leading-7 text-[#6f5d50]">
                 Цвет, свет, материалы и планировка собираются в спокойную историю о будущем доме.
               </p>
             </div>
